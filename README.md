@@ -34,5 +34,9 @@ Each workflow demonstrates how to connect services, handle data, and build usefu
 - Cybersecurity & Automation Enthusiast  
 - Building real-world workflows with *n8n*  
 - [LinkedIn](https://www.linkedin.com/in/diomedes-santana-012972367/) • [Email](mailto:dsantanasec@gmail.com)
+
+- ## 📸 Screenshot
+
+![Workflow Screenshot](./WhatsApp Image 2025-09-21 at 5.05.41 PM.jpeg)
 - Apasionado por Ciberseguridad y Automatización  
 - [LinkedIn](https://www.linkedin.com/in/diomedes-santana-012972367/) | [Email](mailto:dsantanasec@gmail.com)
