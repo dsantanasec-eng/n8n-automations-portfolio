@@ -1,0 +1,60 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "063d9dc7-7e32-4158-ba56-dc42901833c4",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2e37e752-8ab1-419d-928e-ed6125f21de6",
+      "name": "Webhook",
+      "webhookId": "063d9dc7-7e32-4158-ba56-dc42901833c4"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{ \"mensaje\": \"¡Hola, mi primer flujo en n8n!\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "b828d680-8afe-4904-ab3b-374ba41be118",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7a0263be-32ae-4cc2-ba77-17030c16444b",
+  "meta": {
+    "instanceId": "3f2e7932a37bb1109cb47780e2d7b6ef72902bdbf46716c438c4a7e2949df7d1"
+  },
+  "id": "YrhhfO4puTqTJ6jP",
+  "tags": []
+}
