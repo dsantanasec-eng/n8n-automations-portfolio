@@ -1,0 +1,183 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f99662b2-7ef9-4747-b865-dde89e1272f7",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "81047b92-1a13-41b2-b2f4-e6648aa8356d",
+      "name": "Webhook",
+      "webhookId": "f99662b2-7ef9-4747-b865-dde89e1272f7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2a22f77c-bb95-4d38-8af8-9c4ad1743f1f",
+              "name": "name",
+              "value": "juan gomez",
+              "type": "string"
+            },
+            {
+              "id": "9aff7b22-0181-4880-9dea-1a0cd335a7f5",
+              "name": "email",
+              "value": "juangomezco@gmail.com",
+              "type": "string"
+            },
+            {
+              "id": "38987860-6c3f-47da-9ca2-15fbd0ced248",
+              "name": "message",
+              "value": "hello soy juan gomez el mejor vendedor",
+              "type": "string"
+            },
+            {
+              "id": "5cc24fe7-e347-415c-bc5f-9ec9c01ee437",
+              "name": "timestamp",
+              "value": "={{$now}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": "={{ false }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "53539f6f-3f6d-4b75-a38e-71ba7f7f8a2f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1z8qTo9uWN_iAa_73gwpHV74uqw6TfwSWAUlCuGt3228",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1z8qTo9uWN_iAa_73gwpHV74uqw6TfwSWAUlCuGt3228/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1z8qTo9uWN_iAa_73gwpHV74uqw6TfwSWAUlCuGt3228/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "email": "={{$json.email}}",
+            "timestamp": "={{$json.timestamp || $now}}",
+            "name": "={{$json.name}}",
+            "message": "={{$json.message}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        416,
+        0
+      ],
+      "id": "deb29faa-3ae6-435f-99ec-cd180aac5675",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "52CoAmcLcHicRLuX",
+          "name": "Google Sheets account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ecff758c-15cf-411f-ac33-157f7445f361",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3f2e7932a37bb1109cb47780e2d7b6ef72902bdbf46716c438c4a7e2949df7d1"
+  },
+  "id": "2GMojalmTNOxTKNH",
+  "tags": []
+}
